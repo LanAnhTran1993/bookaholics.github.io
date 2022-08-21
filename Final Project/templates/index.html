@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <nav class="bg-light border navbar navbar-expand-md navbar-light">
+        <div class="container-fluid">
+            <div>
+            <a class="navbar-brand" href="/"><span class="blue">BOOK</span><span class="red">A</span><span class="yellow">HOLIC</span><span class="green">S</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ms-auto mt-2">
+                    <li class="nav-link">Already a member?</li>
+                    <button class="nav-link" class="open-button" onclick="openForm()">Log in</button>
+                        <div style="display: none;" class="login-form-popup" id="myForm">
+                            <form action="/login" method="POST" class="login-form-container">
+                                <h1>Login</h1>                           
+                                <label for="username"><b>Username</b></label>
+                                <input type="text" placeholder="Enter Username" name="username" required>                           
+                                <label for="psw"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="password" required>                      
+                                <button type="submit" class="btn">Log in</button>
+                                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                            </form>
+                        </div>        
+                </ul>
+            </div>
+        </div>
+
+
+    </nav>
+
+    <div class="bg-img" class="img1">       
+        <form action="/register" method="post" class="register-form-container">
+            <h1>Register</h1>
+            <div>
+                <input autocomplete="off" autofocus id="name" name="username" placeholder="Username" type="text" minlength="6" required>
+            </div>
+            <div>
+                <input id="password" name="password" placeholder="Password" type="password" minlength="6" required>
+            </div>
+            <div>
+                <input id="password" name="confirmation" placeholder="Confirmation" type="password" minlength="6" required>
+            </div>
+            <button class="btn" "type=" submit">Register</button>
+        </form> 
+    </div>              
+
+    <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+      
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+        </script>
+{% endblock %}

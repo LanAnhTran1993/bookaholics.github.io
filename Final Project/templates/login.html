@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block body %}
+
+<nav class="bg-light border navbar navbar-expand-md navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><span class="blue">BOOK</span><span class="red">A</span><span class="yellow">HOLIC</span><span class="green">S</span></a>
+    </div>
+</nav>
+<div class="bg-img"></div>
+    <form class="centered-links" action="/login" method="POST" class="form-container">
+        <h1>Login</h1>                           
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>                           
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>                      
+        <button type="submit" class="btn">Log in</button>
+    </form>
+    
+</div>
+
+{% endblock %}

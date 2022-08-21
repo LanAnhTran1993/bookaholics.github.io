@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Logged In
+{% endblock %}
+
+{% block body %}
+
+<nav class="bg-light border navbar navbar-expand-md navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><span class="blue">BOOK</span><span class="red">A</span><span class="yellow">HOLIC</span><span class="green">S</span></a>
+    </div>
+    <div class="top-nav">
+        <form action="/search" method="POST">
+            <input name="search" type="text" placeholder="Search..">
+        </form>
+    </div>
+</nav>
+<div class="bg-img1"></div>
+    <div class="centered-links">
+        <ul style="list-style: none">
+            <li><a href="/new">Make a new Entry</a></li>
+            <li><a href="/past">Past Entries</a></li>
+            <li><a href="/random">Explore random entries</a></li>
+        </ul>
+    
+</div>
+
+{% endblock %}

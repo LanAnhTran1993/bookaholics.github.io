@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Make a new Entry
+{% endblock %}
+
+{% block body %}
+
+<nav class="bg-light border navbar navbar-expand-md navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/loggedin"><span class="blue">BOOK</span><span class="red">A</span><span class="yellow">HOLIC</span><span class="green">S</span></a>
+        <ul class="navbar-nav ms-auto mt-2">
+            <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+            <li class="nav-item"><a class="nav-link" href="/past">Past Entries</a></li>
+            <li class="nav-item"><a class="nav-link" href="/random">Feeling random?</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="bg-img2">
+    <form action="/new" method="POST"">
+
+        <div class="left-entry">
+            <h1>New Entry</h1>
+            <label for="title"><b>Book Title</b></label>
+            <input type="text" placeholder="Enter the title of the book" name="title" required>
+            <label for="author"><b>Author</b></label>
+            <input type="text" placeholder="Enter Author" name="author">
+            <label for="genre"><b>Genre</b></label>
+            <input type="text" placeholder="Enter Genre" name="genre">
+            <label for="duration"><b>Time spent reading this book</b></label>
+            <input type="text" placeholder="Enter the amount of time" name="duration">
+        </div>
+        <div class="right-entry">
+            <br>
+            <label for="review"><b>Review</b></label><br>
+            <textarea rows="7" cols="45" type="text" placeholder="Enter your thoughts here" name="review"></textarea>
+            <label for="rating"><b>Rating</b></label><br>
+            <div class="center">
+                <div class="stars">
+                    <input type="radio" name="rate" id="star" value="1">
+                    <label for="one"></label>
+                    <input type="radio" name="rate" id="two" value="2">
+                    <label for="two"></label>
+                    <input type="radio" name="rate" id="three" value="3">
+                    <label for="three"></label>
+                    <input type="radio" name="rate" id="four" value="4">
+                    <label for="four"></label>
+                    <input type="radio" name="rate" id="five" value="5">
+                    <label for="five"></label>
+                </div>
+                
+            </div>
+          <br><br>
+            <button type="submit" class="btn">Submit</button>
+        </div>
+    </form>  
+</div>
+
+{% endblock %}

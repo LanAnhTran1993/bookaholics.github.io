@@ -1,0 +1,356 @@
+/* Size for website name */
+nav .navbar-brand
+{
+    margin-left: 20px;
+    font-size: 10vw; 
+    font-size: 10vh;
+}
+
+/* Colors for website name */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+html, body {
+    height: 99%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+.nav-link{
+  color: black, bold;
+  font-size: 2vw; 
+  font-size: 2vh;
+  font-weight: bold;
+}
+/* Background image for front page*/
+.bg-img {
+    /* The image used */
+    background-image: url("/static/1.jpeg");
+  
+    /* Control the height of the image */
+    min-height: 80%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+  
+  /* Add styles to the form container */
+.register-form-container{
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: white;
+}
+  
+  /* Full-width input fields */
+    input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit button */
+  .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .btn:hover {
+    opacity: 1;
+  }
+
+/* The links in "loggedin" page */
+.centered-links {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #2e944b;
+    font-size: 4vw; 
+    font-size: 4vh;
+  }
+
+/* Background image for "loggedin" page*/
+.bg-img1 {
+    /* The image used */
+    background-image: url("/static/2.jpeg");
+  
+    /* Control the height of the image */
+    min-height: 80%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+    opacity: 40%;
+}
+
+
+.container {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+}
+
+/* Full-width input fields */
+.login-form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.login-form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.login-form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.login-form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.login-form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+  
+  /* The popup form - hidden by default */
+.login-form-popup {
+    position: absolute;
+    top: 250%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+/* Background image for "past" page*/
+  .bg-img2 {
+    /* The image used */
+    background-image: url("/static/3.png");
+  
+    /* Control the height of the image */
+    min-height: 80%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+table {
+  background-color: transparent;
+  margin-bottom: 30px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  vertical-align: middle;
+}
+
+tbody tr:nth-of-type(odd) {
+  background-color: rgb(179, 208, 255, 0.3)
+}
+
+/* The "new" entry page */
+
+.left-entry{
+  position: absolute;
+  margin-top: 70px;
+  margin-left: 180px;
+  max-width: 500px;
+  padding: 16px;
+}
+
+.right-entry{
+  position: absolute;
+  margin-top: 120px;
+  margin-left: 800px;
+  max-width: 500px;
+  padding: 16px;
+}
+
+/*The page numbers in past entries page*/
+
+div.pager {
+  text-align: center;
+  margin: 1em 0;
+
+}
+
+div.pager span {
+  display: inline-block;
+  width: 1.8em;
+  height: 1.8em;
+  line-height: 1.8;
+  text-align: center;
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+  margin-right: 0.5em;
+  margin-bottom: 20px;
+}
+
+div.pager span.active {
+  background: #c00;
+}
+
+/*Style the search box in nav bar*/
+.topnav input[type=text] {
+  padding: 6px;
+  border: none;
+  margin-top: 10px;
+  margin-left: 600px;
+  font-size: 17px;
+}
+
+h1{
+  text-align: center;
+  color: #f5b82e;
+}
+
+/* Background image for "entry" page*/
+.bg-img4 {
+  /* The image used */
+  background-image: url("/static/4.jpeg");
+
+  /* Control the height of the image */
+  min-height: 80%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Star rating */
+.center{
+  transform: translate(-50%, -50%);
+
+}
+
+.center .stars{
+  height: 50px;
+  width: 50px;
+  margin-left: 320px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: left; 
+}
+
+.stars input{
+  display: none;
+}
+
+.stars label{
+  font-size: 50px;
+  color: lightgray;
+  margin: 0 5px;
+  text-shadow: 1px 1px #bbb;
+}
+
+.stars label:before{
+  content: '★'
+}
+
+.stars input:checked ~ label{
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.stars:not(:checked) > label:hover,
+.stars:not(:checked) > label:hover ~ label{
+  color: gold;
+}
+
+.stars input:checked > label:hover,
+.stars input:checked  > label:hover ~ label{
+  color: gold;
+  text-shadow: 1px 1px
+ goldenrod;
+}
+
+/* Each entry */
+.entry{
+  font-weight: bold;
+  margin-top: 50px;
+  margin-left: 80px;
+  max-width: 500px;
+  padding: 16px;
+}
+
+.entry-content{
+  width: 500px;
+  background-color: lightcyan;
+  text-align: center;
+  color:red;
+  display: inline-block;
+  
+}
+.entry-label{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#scroll_div{
+  height: 100px;
+  overflow-y: scroll;
+}
+

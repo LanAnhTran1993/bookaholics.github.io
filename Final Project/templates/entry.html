@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Entry
+{% endblock %}
+
+{% block body %}
+
+<nav class="bg-light border navbar navbar-expand-md navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/loggedin"><span class="blue">BOOK</span><span class="red">A</span><span class="yellow">HOLIC</span><span class="green">S</span></a>
+        <ul class="navbar-nav ms-auto mt-2">
+            <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+            <li class="nav-item"><a class="nav-link" href="/past">Past Entries</a></li>
+            <li class="nav-item"><a class="nav-link" href="/new">Make New Entry</a></li>
+            <li class="nav-item"><a class="nav-link" href="/random">Feeling random?</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="bg-img4">
+    <div class="left-entry" class="entry">
+        {% for row in row %}
+        <lable class="entry-label" for="date">Date</lable>
+        <br>
+        <div class="entry-content">
+        {{ row["date"] }}
+        </div>
+        <br>
+        <lable class="entry-label" for="title">Title</lable>
+        <br>
+        <div class="entry-content">
+        {{ row["title"] }}
+        </div>
+        <br>
+        <lable class="entry-label" for="author">Author</lable>
+        <br>
+        <div class="entry-content">
+        {{ row["author"] }}
+        </div>
+        <br>
+        <lable class="entry-label" for="genre">Genre</lable>
+        <br>
+        <div class="entry-content">
+        {{ row["genre"] }}
+        </div>
+        <br>
+        <lable class="entry-label" for="review">Review</lable>
+        <br>
+        <div class="entry-content" id="scroll_div">
+        {{ row["review"] }}
+        </div>
+        <br>
+        <lable class="entry-label" for="rating">Rating</lable>
+        <br>
+        <div class="entry-content">
+        {{ row["rating"] }}
+        </div>
+        <br>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

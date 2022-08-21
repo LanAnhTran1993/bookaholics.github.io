@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Past Entries
+{% endblock %}
+
+{% block body %}
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<nav class="bg-light border navbar navbar-expand-md navbar-light">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="/loggedin"><span class="blue">BOOK</span><span class="red">A</span><span class="yellow">HOLIC</span><span class="green">S</span></a>
+      <ul class="navbar-nav ms-auto mt-2">
+          <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+          <li class="nav-item"><a class="nav-link" href="/new">Make New Entry</a></li>   
+          <li class="nav-item"><a class="nav-link" href="/past">Past Entries</a></li>
+          <li class="nav-item"><a class="nav-link" href="/random">Feeling random?</a></li>
+      </ul>
+      <div class="top-nav">
+        <form action="/search" method="POST">
+            <input name="search" type="text" placeholder="Search..">
+        </form>
+    </div>
+  </div>
+</nav>
+{% if rows %}
+<br>
+<h1>{{ message }}</h1>
+<br>
+<table class="paginated">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Review</th>
+            <th></th>
+            <th hidden>Row ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Display the result -->
+        {% for row in rows %}
+        <div id="entry">
+            <tr>
+                <td>{{ row["date"] }}</td>
+                <td>{{ row["title"] }}</td>
+                <td>{{ row["author"] }}</td>
+                <td>{{ row["review"] }}</td>
+                <form action="/entry" method="POST">
+                <td hidden>{{ row }}</td>
+                <td>
+                    <button name="id" value="{{ row }}" class="btn" type="submit">Read the full entry</button>
+                </td>
+
+                </form>
+            </tr>
+        </div>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<br><br>
+<h1>NO SUCH ENTRY FOR THAT SEARCH</h1>
+{% endif %}
+<script>
+$(function() {
+  $('table.paginated').each(function() {
+    var currentPage = 0;
+    var numPerPage = 4;
+    var $table = $(this);
+    $table.bind('repaginate', function() {
+      $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
+    });
+    $table.trigger('repaginate');
+    var numRows = $table.find('tbody tr').length;
+    var numPages = Math.ceil(numRows / numPerPage);
+    var $pager = $('<div class="pager"></div>');
+    var $previous = $('<span class="previous"><<</spnan>');
+    var $next = $('<span class="next">>></spnan>');
+    for (var page = 0; page < numPages; page++) {
+      $('<span class="page-number"></span>').text(page + 1).bind('click', {
+        newPage: page
+      }, function(event) {
+        currentPage = event.data['newPage'];
+        $table.trigger('repaginate');
+        $(this).addClass('active').siblings().removeClass('active');
+      }).appendTo($pager).addClass('clickable');
+    }
+    $pager.insertAfter($table).find('span.page-number:first').addClass('active');
+    $previous.insertBefore('span.page-number:first');
+    $next.insertAfter('span.page-number:last');
+
+    $next.click(function(e) {
+      $previous.addClass('clickable');
+      $pager.find('.active').next('.page-number.clickable').click();
+    });
+    $previous.click(function(e) {
+      $next.addClass('clickable');
+      $pager.find('.active').prev('.page-number.clickable').click();
+    });
+    $table.on('repaginate', function() {
+      $next.addClass('clickable');
+      $previous.addClass('clickable');
+
+      setTimeout(function() {
+        var $active = $pager.find('.page-number.active');
+        if ($active.next('.page-number.clickable').length === 0) {
+          $next.removeClass('clickable');
+        } else if ($active.prev('.page-number.clickable').length === 0) {
+          $previous.removeClass('clickable');
+        }
+      });
+    });
+    $table.trigger('repaginate');
+  });
+});
+</script>
+{% endblock %}
